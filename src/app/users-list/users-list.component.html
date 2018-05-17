@@ -1,0 +1,9 @@
+<p>
+  users-list works!
+</p>
+<ul>
+  <li *ngFor="let remoteUser of remoteUsers"
+    (click)="onSelect(remoteUser)">
+    <span class="badge">{{remoteUser.firstName}}</span> {{remoteUser.lastName}}
+  </li>
+</ul>
