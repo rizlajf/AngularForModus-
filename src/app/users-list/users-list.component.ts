@@ -8,13 +8,13 @@ import { RemoteUser } from '../core/models/remoteUser.model';
   styleUrls: ['./users-list.component.scss']
 })
 export class UsersListComponent implements OnInit {
-  remoteUsers: RemoteUser;
+  public remoteUsers: RemoteUser[] = [];
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.userService.getRemoteUsers()
-                    .subscribe(remoteUsers => {
-                      this.remoteUsers = remoteUsers;
+                    .subscribe(_remoteUsers => {
+                      this.remoteUsers = _remoteUsers;
                     }
                   );
   }
