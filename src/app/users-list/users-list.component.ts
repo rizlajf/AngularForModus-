@@ -8,15 +8,20 @@ import { RemoteUser } from '../core/models/remoteUser.model';
   styleUrls: ['./users-list.component.scss']
 })
 export class UsersListComponent implements OnInit {
-  public remoteUsers: RemoteUser[] = [];
+  public remoteUsers;
   constructor(private userService: UserService) { }
 
   ngOnInit() {
     this.userService.getRemoteUsers()
                     .subscribe(_remoteUsers => {
-                      this.remoteUsers = _remoteUsers;
+                      this.remoteUsers = _remoteUsers.results;
                     }
                   );
+  }
+
+  onSelect(remoteUser)
+  {
+
   }
 
 }
