@@ -3,7 +3,9 @@
 </p>
 <ul>
   <li *ngFor="let remoteUser of remoteUsers"
-    (click)="onSelect(remoteUser)">
-    <span class="badge">{{remoteUser.firstName}}</span> {{remoteUser.lastName}}
+    >
+    <span >{{remoteUser.name}}</span>
   </li>
 </ul>
+
+<!-- <span >{{remoteUsers.name}}</span> -->
