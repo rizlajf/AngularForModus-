@@ -10,7 +10,7 @@ import { LandingComponent } from './landing/landing.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UserService } from './services/user.service';
 import { ErrorComponent } from './error/error.component';
-
+import { CapitalizePipe } from './capitalize.pipe';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { ErrorComponent } from './error/error.component';
     HomeComponent,
     LandingComponent,
     UsersListComponent,
-    ErrorComponent
+    ErrorComponent, CapitalizePipe
   ],
   imports: [
     BrowserModule,
