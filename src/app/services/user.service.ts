@@ -1,22 +1,23 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Http, Headers, RequestOptions, Response } from '@angular/http';
+//import { HttpClient, HttpHeaders } from '@angular/common/http';
+//import { Http, Headers, RequestOptions, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { RemoteUser } from '../core/models/remoteUser.model';
 import 'rxjs/add/operator/map';
-
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
 
 @Injectable()
 export class UserService {
 
   private remoteUserUrl = 'https://randomuser.me/api/';
-  constructor(private http: HttpClient) { }
+  constructor(private http: Http) { }
 
-  getRemoteUsers () :Observable<any[]>{
-    return this.http.get(this.remoteUserUrl)
-      .map((res: Response) => res.json())
+  getRemoteUsers () :Observable<any>{
+
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+
+    return this.http.get(this.remoteUserUrl,{ headers })
+    .map(response => response.json());
   }
 }
