@@ -4,7 +4,7 @@
 <ul>
   <li *ngFor="let remoteUser of remoteUsers"
     >
-    <span >{{remoteUser.name.title | uppercase }}. {{remoteUser.name.first}} {{remoteUser.name.last}}</span> 
+    <span >{{remoteUser.name.title | capitalize }}. {{remoteUser.name.first | capitalize}} {{remoteUser.name.last | capitalize}}</span> 
   </li>
 </ul>
 
