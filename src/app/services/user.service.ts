@@ -1,23 +1,26 @@
 import { Injectable } from '@angular/core';
-//import { HttpClient, HttpHeaders } from '@angular/common/http';
-//import { Http, Headers, RequestOptions, Response } from '@angular/http';
 import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
-import { RemoteUser } from '../core/models/remoteUser.model';
 import 'rxjs/add/operator/map';
+import {RootObject, Result} from '../core/models/remoteUser.model';
 
 @Injectable()
 export class UserService {
-
-  private remoteUserUrl = 'https://randomuser.me/api/';
+  remoteUsers :RootObject;
+  private remoteUserUrl = 'https://randomuser.me/api/?results=20';
   constructor(private http: Http) { }
 
-  getRemoteUsers () :Observable<any>{
+  getRemoteUsers () :Observable<RootObject>{
 
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
 
     return this.http.get(this.remoteUserUrl,{ headers })
     .map(response => response.json());
+  }
+
+  getUserByUserName(username: string) 
+  {
+    return this.remoteUsers.results.find(x => x.login.username == username);
   }
 }

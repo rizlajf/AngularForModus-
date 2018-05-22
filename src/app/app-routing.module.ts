@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LandingComponent } from './landing/landing.component';
 import { UsersListComponent } from './users-list/users-list.component';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [{
@@ -21,7 +22,8 @@ const routes: Routes = [{
 }, {
   path: '**',
   redirectTo: 'landing'
-}
+},
+{ path: 'detail/:username', component: UserDetailComponent }
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-//declare module namespace {
+//declare namespace RemoteUser{
 
   export interface Name {
       title: string;
@@ -55,7 +55,7 @@
       version: string;
   }
 
-  export interface RemoteUser {
+  export interface RootObject {
       results: Result[];
       info: Info;
   }

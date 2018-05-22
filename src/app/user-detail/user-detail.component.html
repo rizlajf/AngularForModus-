@@ -1,0 +1,11 @@
+<p>
+  user-detail works!
+</p>
+<p>
+  <img src="{{remoteUser.picture.medium}}" />
+  <span>Name  : {{remoteUser.name.title | capitalize }}. {{remoteUser.name.first | capitalize}} {{remoteUser.name.last | capitalize}} </span>
+  <span>Email : {{remoteUser.email }}</span>
+  <span>Phone : {{remoteUser.phone }}</span>
+</p>
+
+<button (click)="goBack()">go back</button>

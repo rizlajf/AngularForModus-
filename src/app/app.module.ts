@@ -11,6 +11,7 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { UserService } from './services/user.service';
 import { ErrorComponent } from './error/error.component';
 import { CapitalizePipe } from './capitalize.pipe';
+import { UserDetailComponent } from './user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { CapitalizePipe } from './capitalize.pipe';
     HomeComponent,
     LandingComponent,
     UsersListComponent,
-    ErrorComponent, CapitalizePipe
+    ErrorComponent, CapitalizePipe, UserDetailComponent
   ],
   imports: [
     BrowserModule,

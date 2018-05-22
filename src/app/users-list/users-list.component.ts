@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../services/user.service';
-import { RemoteUser } from '../core/models/remoteUser.model';
+import { Result, RootObject } from '../core/models/remoteUser.model';
 
 @Component({
   selector: 'ng-e-users-list',
@@ -8,7 +8,8 @@ import { RemoteUser } from '../core/models/remoteUser.model';
   styleUrls: ['./users-list.component.scss']
 })
 export class UsersListComponent implements OnInit {
-  public remoteUsers;
+  public remoteUsers : Result[]=[] ;
+  selectedUser: Result;
   constructor(private userService: UserService) { }
 
   ngOnInit() {
@@ -21,7 +22,7 @@ export class UsersListComponent implements OnInit {
 
   onSelect(remoteUser)
   {
-
+    this.selectedUser = remoteUser;
   }
 
 }

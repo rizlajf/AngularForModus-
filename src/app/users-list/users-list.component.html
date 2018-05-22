@@ -2,10 +2,10 @@
   users-list works!
 </p>
 <ul>
-  <li *ngFor="let remoteUser of remoteUsers"
-    >
-    <span >{{remoteUser.name.title | capitalize }}. {{remoteUser.name.first | capitalize}} {{remoteUser.name.last | capitalize}}</span> 
+  <li *ngFor="let remoteUser of remoteUsers" >
+      <a routerLink="/detail/{{remoteUser.login.username}}">
+        <span>
+            {{remoteUser.name.title | capitalize }}. {{remoteUser.name.first | capitalize}} {{remoteUser.name.last | capitalize}}         </span>        
+      </a>    
   </li>
 </ul>
-
-<!-- <span >{{remoteUsers.name}}</span> -->
